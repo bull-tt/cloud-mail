@@ -129,7 +129,7 @@ jobs:
           sed -i "s|\${LINUXDO_CALLBACK_URL}|${LINUXDO_CALLBACK_URL}|g" "$CONFIG_FILE"
           
           echo "✅ Environment setup completed."
-  name: 🔍 调试 Cloudflare 认证
+  - name: 🔍 调试 Cloudflare 认证
   working-directory: ./mail-worker
   run: pnpm wrangler whoami
       - name: ⚡ 设置KV数据库 / Set up KV database
