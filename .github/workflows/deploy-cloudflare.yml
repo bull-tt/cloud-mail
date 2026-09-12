@@ -51,7 +51,10 @@ jobs:
       - name: 📦 Install dependencies
         run: pnpm install --frozen-lockfile
         working-directory: ./mail-worker
-
+      
+      - name: ⬆️ Update wrangler
+        working-directory: ./mail-worker
+        run: pnpm add -D wrangler@latest
       - name: 📡 Disable Wrangler telemetry
         working-directory: ./mail-worker
         run: pnpm wrangler telemetry disable
