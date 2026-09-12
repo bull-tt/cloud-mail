@@ -131,7 +131,11 @@ jobs:
       - name: 🔍 Debug Cloudflare auth
         working-directory: ./mail-worker
         run: pnpm wrangler whoami
-
+      - name: 🔬 Raw API test for KV list
+        run: |
+          curl -s -X GET "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/storage/kv/namespaces" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json"
       - name: ⚡ Set up KV database
         working-directory: ./mail-worker
         run: |
