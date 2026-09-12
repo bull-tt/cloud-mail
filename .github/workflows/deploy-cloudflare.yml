@@ -129,6 +129,11 @@ jobs:
           echo "✅ Environment setup completed."
 
       - name: 🔍 Debug Cloudflare auth
+         - name: 🔢 Check secret lengths
+          run: |
+          echo "Token length: ${#CLOUDFLARE_API_TOKEN}"
+          echo "Account ID length: ${#CLOUDFLARE_ACCOUNT_ID}"
+          echo "Account ID: [${CLOUDFLARE_ACCOUNT_ID}]"
         working-directory: ./mail-worker
         run: pnpm wrangler whoami
       - name: 🔬 Raw API test for KV list
