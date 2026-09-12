@@ -129,7 +129,7 @@ jobs:
           echo "✅ Environment setup completed."
 
       - name: 🔍 Debug Cloudflare auth
-         - name: 🔢 Check secret lengths
+      - name: 🔢 Check secret lengths
           run: |
           echo "Token length: ${#CLOUDFLARE_API_TOKEN}"
           echo "Account ID length: ${#CLOUDFLARE_ACCOUNT_ID}"
